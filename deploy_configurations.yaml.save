@@ -1,14 +1,14 @@
----
+       ---
   - name: Deploy Cisco IOS-XE Router Configurations
     connection: local
     hosts: cisco-ios-xe-routers
     gather_facts: no
     vars:
       creds:
-        hostname: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        dev_os: "{{ device_type }}"
+        hostname: "10.0.0.5"
+        username: "ignw"
+        password: "ignw"
+        dev_os: "ios"
     tags: ios-xe
     tasks:
       - napalm_install_config: 
@@ -26,10 +26,10 @@
     gather_facts: no
     vars:
       creds:
-        hostname: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        dev_os: "{{ device_type }}"
+        hostname: "10.0.0.6"
+        username: "ignw"
+        password: "ignw"
+        dev_os: "nxos_ssh"
     tags: nxos
     tasks:
       - napalm_install_config:
@@ -47,11 +47,11 @@
     gather_facts: no
     vars:
       creds:
-        host: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
+        host: "10.0.0.8"
+        username: "ignw"
+        password: "ignw"
         authorize: yes
-        auth_pass: "{{ enable_password }}"
+        auth_pass: "ignw"
     tags: asa
     tasks:
       - asa_config:
