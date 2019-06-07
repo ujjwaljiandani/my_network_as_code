@@ -1,5 +1,6 @@
 node {
     stage ('Checkout Repository') {
+        deleteDir()
         checkout scm
     }
     stage ('Render Configurations') {
